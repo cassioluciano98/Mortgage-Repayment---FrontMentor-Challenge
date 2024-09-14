@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style/style.css">
+
+  <script defer src="app.js/app.js"></script>
+  
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  
+</head>
+<body>
+
+  <div class="content-body">
+  <main>
+
+    <section>
+
+      <form >
+
+      <header>
+        <h1>Mortgage Calculator</h1>
+        <a href="#" id="clearAll">Clear All</a>
+      </header>
+
+      <div class="amount">
+        <label for="mortgageAmount"
+        onmousemove="amountMove()" onmouseout="amountOut()">Mortgage Amount</label>
+        <div class="input-group" onmousemove="amountMove()" onmouseout="amountOut()">
+          <span class="unit-label">£</span>
+          <input type="number" required maxlength="10" name="" id="mortgageAmount" step=".01">
+        </div>
+
+        <p class="required">This field is required</p>
+        
+      </div><!-- Amount -->
+
+      <div class="term-rate">
+      
+        <div class="term">
+          <label for="term" onmousemove="termMove()" onmouseout="termOut()">Mortgage Term</label>
+            <div class="input-group" onmousemove="termMove()" onmouseout="termOut()">
+              <input type="number" required name="" id="term">
+              <span class="unit-label">years</span>
+            </div>
+
+            <p class="required">This field is required</p>
+          </div>
+      
+        <div class="rate">
+          <label for="rate" onmousemove="rateMove()" onmouseout="rateOut()">Interest Rate</label>
+          <div class="input-group" onmousemove="rateMove()" onmouseout="rateOut()">
+            <input type="number" required name="" id="rate" step=".01">
+            <span class="unit-label">%</span>
+          </div>
+
+          <p class="required">This field is required</p>
+        </div>
+      
+      </div><!--Term Rate-->
+
+
+      <p>Mortgage Type</p>
+
+      <div class="radio">
+        
+        <label for="repayment" class="repayment">
+          <input type="radio" name="mortagageType" id="repayment" >
+          <span>Repayment</span>
+        </label>
+      </div>
+
+      <div class="radio">
+        
+        <label for="interestOnly" class="interest">
+          <input type="radio" name="mortagageType" id="interestOnly">
+          <span>Interest Only</span>
+        </label>
+      </div>
+
+      <p class="required">This field is required</p>
+
+      <button type="submit"> 
+        <span><img src="assets/images/icon-calculator.svg" alt="Calculadora">
+        Calculate Repayments</span>
+      </button>
+
+    </form>
+    </section>
+
+    <!-- Empty results start -->
+    <aside class="empty active">
+      
+      <img src="assets/images/illustration-empty.svg" alt="Illustration Empty">
+      <h1>Results shown here</h1>
+
+      <p>Complete the form and click “calculate repayments” to see what 
+      your monthly repayments would be.</p>
+
+      </aside>
+    <!-- Empty results end -->
+
+    <!-- Completed results start -->
+    <aside class="results">
+      <h1>Your results</h1>
+
+      <p>Your results are shown below based on the information you provided. 
+      To adjust the results, edit the form and click “calculate repayments” again.</p>
+
+      <div class="result-box">
+
+        <div class="monthly">
+          <p>Your monthly repayments</p>
+          <span id="monthlyValue"></span>
+        </div>
+
+        <div class="repay">
+          <p>Total you'll repay over the term</p>
+          <span id="totalRepay"></span>
+        </div>
+
+      </div>
+
+    </aside>
+    <!-- Completed results end -->
+
+  </main>
+
+  </div><!--Content Body-->
+  
+
+</body>
+</html>
